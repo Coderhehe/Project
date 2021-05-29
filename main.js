@@ -4,5 +4,5 @@ function setup(){
 }
 
 function ph() {
-    save("img.png");
+    save("project.png");
 }
