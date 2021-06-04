@@ -17,14 +17,22 @@ function modelLoaded(){
 console.log("Model Loaded");
 }
 function draw() {
-image(video,0,0,300,300);
+    image(video,0,0,300,300);
+    image(mustache,nosex,nosey,30,30);
 }
 
 
 function gotPoses(results){
-if (results.length > 0) {
-    console.log(results);
-    console.log("nosex= "+results[0].pose.nose.x);
-    console.log("nosey= "+results[0].pose.nose.y);
+    if (results.length > 0) {
+        console.log(results);
+        nosex=results[0].pose.nose.x-15;
+        nosey=results[0].pose.nose.y;
+        console.log("nosex= "+nosex);
+        console.log("nosey= "+nosey);
+    }
 }
+nosex=0;
+nosey=0;
+function preload() {
+    mustache=loadImage("https://i.postimg.cc/3x3QzSGq/m.png");
 }
